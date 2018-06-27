@@ -21,8 +21,15 @@
 .App-intro {
   font-size: large;
 }
-
+.tips {
+  animation: tips 1 1s linear;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+@keyframes tips {
+  0% {transform: translateY(0px)}
+  50% {transform: translateY(30px)}
+  100% {transform: translateY(-20px)}
 }

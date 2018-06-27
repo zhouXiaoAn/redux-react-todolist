@@ -1,8 +1,27 @@
 import React,{Component} from 'react'
+import {addToCart,updatedCart} from '../store/actions'
+import store from '../store'
 class Test extends Component {
+    renderList = () => {
+        return store.getState().cart.map((item,index)=>{
+            return (
+                <li key={index}>
+                    <p>{item.product}</p>
+                    <span>{item.quantity}&nbsp</span>
+                    <span>{item.unitCost}</span>
+                </li>
+            )
+        })
+    }
     render() {
         return (
-            <h1>测试</h1>
+            <div>
+                <ul>
+                    {
+                        this.renderList()
+                    }
+                </ul>
+            </div>
         )
     }
 }
